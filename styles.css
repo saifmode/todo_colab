@@ -25,6 +25,7 @@ body {
 
 .add-btn:hover {
     background: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 
 .modal {
@@ -46,6 +47,14 @@ body {
     align-items: center
 }
 
+.close-btn:hover {
+    cursor: pointer;
+}
+
+.submit:hover {
+    cursor: pointer;
+}
+
 .todo-items-container {
     display: flex;
     flex-direction: column;
@@ -58,8 +67,8 @@ body {
     flex-direction: column;
     /* justify-content: center;
     align-items: center; */
+    width: 40vw;
     border: 1px solid black;
-    width: 60vw;
     margin: 10px;
 }
 
@@ -80,6 +89,7 @@ body {
 
 .date {
     margin: .5rem;
+    align-self: flex-end;
 }
 
 .delete-button {
@@ -90,7 +100,8 @@ body {
 }
 
 .delete-button:hover {
-    background: rgba(0, 0, 0, 0.1)
+    background: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 
 .check-button {
@@ -103,6 +114,7 @@ body {
 
 .check-button:hover {
     background: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 
 .checked {
