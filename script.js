@@ -1,7 +1,17 @@
 //TODO: npm calendar on form
+let tags = ['shopping', 'finance', 'work', 'education', 'family']
 
-//OPEN AND CLOSE FORM
 const modal = document.querySelector('.modal')
+
+const tagsPanel = document.querySelector('.tags-panel')
+
+tags.forEach(tag => {
+  tagCard = document.createElement('div');
+  tagCard.classList.add('tag-card');
+  tagText = document.createTextNode(tag);
+  tagCard.appendChild(tagText);
+  tagsPanel.appendChild(tagCard);
+})
 
 
 const addBtn = document.querySelector('.add-btn')
