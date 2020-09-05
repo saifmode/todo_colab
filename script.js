@@ -55,8 +55,9 @@ function submitItem(e) {
   let newDescription = document.getElementById('description').value
   const date = new Date()
   const tags = selectedTags.map(tag => tag);
-  document.querySelectorAll('.selected-tag').forEach(tag => tag.classList.remove('selected-tag'))
-
+  document.querySelectorAll('.selected-tag').forEach(tag => tag.classList.remove('selected-tag'));
+  selectedTags = []
+  
   createTodoItem(newTask, newDescription, date, tags)  
   closeModal()
 }
