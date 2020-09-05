@@ -64,6 +64,7 @@ function renderToDo(toDo) {
   const task = document.createElement('p')
   task.textContent = `${toDo.newTask}`
   task.classList.add('task')
+  task.classList.add('task-text')
   toDoItemTask.appendChild(task)
   toDoItems.appendChild(toDoItemTask)
   toDoItemsContainer.appendChild(toDoItems)
@@ -71,6 +72,7 @@ function renderToDo(toDo) {
   const description = document.createElement('p')
   description.textContent = `${toDo.newDescription}`
   description.classList.add('description')
+  description.classList.add('description-text')
   toDoItems.appendChild(description)
   toDoItemsContainer.appendChild(toDoItems)
 
