@@ -84,6 +84,7 @@ function renderToDo(toDo) {
   const date = document.createElement('p')
   date.textContent = toDo.date.toString().split(' ').slice(0, 5).join(' ')
   date.classList.add('date')
+  date.classList.add('date-text')
   toDoItems.appendChild(date)
   toDoItemsContainer.appendChild(toDoItems)
 
