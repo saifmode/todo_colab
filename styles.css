@@ -78,6 +78,10 @@ body {
     margin: .5rem;
 }
 
+.date {
+    margin: .5rem;
+}
+
 .delete-button {
     font-size: .5rem;
     border: none;
@@ -115,4 +119,8 @@ button:focus  {
 
 .description-text {
     font-size: .8rem;
+}
+
+.date-text {
+    font-size: .7rem;
 }
