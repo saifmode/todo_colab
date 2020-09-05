@@ -1,7 +1,34 @@
 //TODO: npm calendar on form
+let tags = ['shopping', 'finance', 'work', 'education', 'family', 'sports']
+let selectedTags = []
 
-//OPEN AND CLOSE FORM
 const modal = document.querySelector('.modal')
+const tagsPanel = document.querySelector('.tags-panel')
+
+tags.forEach(tag => {
+  let tagCard = document.createElement('div');
+  tagCard.classList.add('tag-card');
+  let tagText = document.createTextNode(tag);
+  tagCard.appendChild(tagText);
+  tagCard.addEventListener('click', (event) => {
+    event.target.classList.toggle('selected-tag');
+    if (event.target.classList.contains('selected-tag')) {
+      selectedTags.push(tag)
+    } else {
+      selectedTags.splice(selectedTags.indexOf(tag), 1)
+    };
+  });
+  tagsPanel.appendChild(tagCard);
+})
+
+// function addTag(event, tag) {
+//   let closableTag = document.createElement('div');
+//   closableTag.classList.add('closeable-tag');
+//   let closableTagText = document.createTextNode(tag);
+//   closableTag.appendChild(closableTagText);
+//   closableTagCard.addEventListener('click', (event) => close(event, tag));
+//   selectedTags.value += tag;
+// }
 
 
 const addBtn = document.querySelector('.add-btn')
@@ -27,17 +54,20 @@ function submitItem(e) {
   let newTask = document.getElementById('task').value; //task input
   let newDescription = document.getElementById('description').value
   const date = new Date()
+  const tags = selectedTags.map(tag => tag);
+  document.querySelectorAll('.selected-tag').forEach(tag => tag.classList.remove('selected-tag'))
 
-  createTodoItem(newTask, newDescription, date)  
+  createTodoItem(newTask, newDescription, date, tags)  
   closeModal()
 }
 
 //FACTORY FUNCTION
-const TodoItem = (newTask, newDescription, date) => {
+const TodoItem = (newTask, newDescription, date, tags) => {
   return {
     newTask,
     newDescription,
     date,
+    tags,
     addCheck () { 
       console.log(`this is ${newTask} and ${newDescription}`)
     }
@@ -45,8 +75,8 @@ const TodoItem = (newTask, newDescription, date) => {
 }
 
 
-function createTodoItem(task, description, date) {
-  const toDo = TodoItem(task, description, date)
+function createTodoItem(task, description, date, tags) {
+  const toDo = TodoItem(task, description, date, tags)
   renderToDo(toDo)
 }
 
@@ -87,6 +117,14 @@ function renderToDo(toDo) {
   date.classList.add('date-text')
   toDoItems.appendChild(date)
   toDoItemsContainer.appendChild(toDoItems)
+
+  const tags = document.createElement('p')
+  tags.textContent = toDo.tags.join(', ')
+  tags.classList.add('tags')
+  tags.classList.add('tags-text')
+  toDoItems.appendChild(tags)
+  toDoItemsContainer.appendChild(toDoItems)
+
 
   renderDeleteButton(toDoItemsContainer, toDoItems)
  

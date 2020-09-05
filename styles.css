@@ -36,6 +36,7 @@ body {
     top: 50%;
     transform: translate(-50%, -50%);
     border: 1px solid black;
+    width: 23%;
     padding: 2em;
     z-index: 1;
     text-align: center;
@@ -96,6 +97,10 @@ body {
     align-self: flex-end;
 }
 
+.tags {
+    margin: .5rem;
+}
+
 .delete-button {
     font-size: .5rem;
     border: none;
@@ -139,4 +144,40 @@ button:focus  {
 
 .date-text {
     font-size: .7rem;
+}
+
+.tags-text {
+    font-size: .7rem;
+}
+
+.tags-panel {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 3px;
+    width: 100%;
+    /* border: 1px solid red; */
+}
+
+.tag-card {
+    /* position: relative; */
+    cursor: pointer;
+    width: max-content;
+    margin: 5px;
+    padding: 3px;
+    font-size: .8rem;
+    border: 1px solid rgba(0,0,0,0.5);
+}
+
+.tag-card:hover {
+    background-color: rgba(255,255,255,0.3);
+}
+
+.selected-tag {
+    background-color: rgba(255, 245, 245);
+}
+
+.selected-tag:hover {
+    background-color: rgba(255, 245, 245);
 }
