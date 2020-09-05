@@ -3,10 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo List</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Todo List!</h1>
-    <h2>ss</h2>
+    <div class="nav">
+        <h1>TODO LIST</h1>
+        <button class="add-btn">ADD</button>
+    </div>
+    <div class="modal">
+        <form id="add-form" action="#" method="post">
+            <label for="task">Task</label><br>
+            <input type="text" class="task" id="task" name="task"><br>
+
+            <label for="description">Description</label><br>
+            <input type="text" class="description" id="description" name="description"><br><br>
+
+            <div class="modal-buttons">
+                <input type="submit" class="submit" value="Submit">
+                <button type="button" class="close-btn">Close</button>
+            </div>
+          </form> 
+    </div>
+    <div class="todo-items-container"> 
+        <!-- TODO: change name from container to something else -->
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
