@@ -108,3 +108,11 @@ body {
 button:focus  {
     outline: 0;
 }
+
+.task-text {
+    font-size: 1.3rem;
+}
+
+.description-text {
+    font-size: .8rem;
+}
