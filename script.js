@@ -26,16 +26,18 @@ function submitItem(e) {
   e.preventDefault();
   let newTask = document.getElementById('task').value; //task input
   let newDescription = document.getElementById('description').value
+  const date = new Date()
 
-  createTodoItem(newTask, newDescription)  
+  createTodoItem(newTask, newDescription, date)  
   closeModal()
 }
 
 //FACTORY FUNCTION
-const TodoItem = (newTask, newDescription) => {
+const TodoItem = (newTask, newDescription, date) => {
   return {
     newTask,
     newDescription,
+    date,
     addCheck () { 
       console.log(`this is ${newTask} and ${newDescription}`)
     }
@@ -43,8 +45,8 @@ const TodoItem = (newTask, newDescription) => {
 }
 
 
-function createTodoItem(task, description) {
-  const toDo = TodoItem(task, description)
+function createTodoItem(task, description, date) {
+  const toDo = TodoItem(task, description, date)
   renderToDo(toDo)
 }
 
@@ -61,6 +63,9 @@ function renderToDo(toDo) {
   let toDoItemDescription = document.createElement('div')
   toDoItemDescription.classList.add('todo-item-description')
 
+  let toDoItemDate = document.createElement('div')
+  toDoItemDate.classList.add('todo-item-date')
+
   const task = document.createElement('p')
   task.textContent = `${toDo.newTask}`
   task.classList.add('task')
@@ -74,6 +79,12 @@ function renderToDo(toDo) {
   description.classList.add('description')
   description.classList.add('description-text')
   toDoItems.appendChild(description)
+  toDoItemsContainer.appendChild(toDoItems)
+
+  const date = document.createElement('p')
+  date.textContent = toDo.date.toString().split(' ').slice(0, 5).join(' ')
+  date.classList.add('date')
+  toDoItems.appendChild(date)
   toDoItemsContainer.appendChild(toDoItems)
 
   renderDeleteButton(toDoItemsContainer, toDoItems)
