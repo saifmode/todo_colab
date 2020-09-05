@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+    background-color: rgb(218, 197, 197);
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-btn {
+    border: none;
+    background: transparent;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+
+.add-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.modal {
+    display: none;
+    position: absolute;
+    background-color: rgb(218, 197, 197);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid black;
+    padding: 2em;
+    z-index: 1;
+    text-align: center;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.todo-items-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-items {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+    border: 1px solid black;
+    width: 60vw;
+    margin: 10px;
+}
+
+.todo-item-task {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
+}
+
+.task {
+    margin: .5rem;
+}
+
+.description {
+    margin: .5rem;
+}
+
+.delete-button {
+    font-size: .5rem;
+    border: none;
+    border-top: 1px solid black;
+    background: transparent;
+}
+
+.delete-button:hover {
+    background: rgba(0, 0, 0, 0.1)
+}
+
+.check-button {
+    justify-self: flex-end;
+    font-size: .5rem;
+    border: none;
+    border-top: 1px solid black;
+    background: transparent;
+}
+
+.check-button:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.checked {
+    text-decoration: line-through;
+}
+
+button:focus  {
+    outline: 0;
+}
