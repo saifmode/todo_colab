@@ -89,6 +89,7 @@ body {
 
 .date {
     margin: .5rem;
+    align-self: flex-end;
 }
 
 .delete-button {
