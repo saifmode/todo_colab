@@ -25,6 +25,7 @@ body {
 
 .add-btn:hover {
     background: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 
 .modal {
@@ -44,6 +45,14 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center
+}
+
+.close-btn:hover {
+    cursor: pointer;
+}
+
+.submit:hover {
+    cursor: pointer;
 }
 
 .todo-items-container {
@@ -90,7 +99,8 @@ body {
 }
 
 .delete-button:hover {
-    background: rgba(0, 0, 0, 0.1)
+    background: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 
 .check-button {
@@ -103,6 +113,7 @@ body {
 
 .check-button:hover {
     background: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 
 .checked {
