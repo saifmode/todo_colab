@@ -37,9 +37,16 @@ body {
     transform: translate(-50%, -50%);
     border: 1px solid black;
     width: 23%;
+    min-width: 162px;
     padding: 2em;
     z-index: 1;
     text-align: center;
+}
+
+.modal-items {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
 }
 
 .modal-buttons {
@@ -84,6 +91,13 @@ body {
     margin: 0;
 }
 
+.modal-items__inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+}
 .task {
     margin: .5rem;
 }
