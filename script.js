@@ -54,10 +54,12 @@ function submitItem(e) {
   let newTask = document.getElementById('task').value; //task input
   let newDescription = document.getElementById('description').value
   const date = new Date()
+  
   const tags = selectedTags.map(tag => tag);
   document.querySelectorAll('.selected-tag').forEach(tag => tag.classList.remove('selected-tag'));
   selectedTags = []
   
+  form.reset()
   createTodoItem(newTask, newDescription, date, tags)  
   closeModal()
 }
